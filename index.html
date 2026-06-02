@@ -33,7 +33,7 @@
             background: var(--primary);
             color: #fff;
             display: flex;
-            justify-content: space-between; /* Adjusted for mobile toggle */
+            justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
@@ -41,8 +41,8 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         nav {
-            display: flex; /* Ensure nav is a flex container by default */
-            align-items: center; /* Align items vertically */
+            display: flex;
+            align-items: center;
         }
         nav a {
             margin: 0 1rem;
@@ -55,7 +55,7 @@
         }
         nav a.active,
         nav a:hover {
-            color: #ffeb3b; /* A bright yellow to make active/hover links pop */
+            color: #ffeb3b;
         }
         .container {
             max-width: 900px;
@@ -72,27 +72,20 @@
             opacity: 1;
             transform: translateY(0);
         }
-        h1, h2 {
+        h1, h2, h3 {
             color: var(--primary);
             margin-bottom: 1rem;
         }
-        /* Styles for the project cards and other new sections */
-        .project-card, .skill-card, .testimonial-card {
-            background: rgba(0, 0, 0, 0.05); /* Slightly transparent black for a subtle card background */
+        .project-card, .skill-card, .testimonial-card, .cert-card {
+            background: rgba(0, 0, 0, 0.05);
             padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.05);
             transition: box-shadow 0.3s;
-            margin-bottom: 1.5rem; /* Spacing between cards */
+            margin-bottom: 1.5rem;
         }
-        .project-card:hover, .skill-card:hover, .testimonial-card:hover {
-            box-shadow: 0 0 25px rgba(0,0,0,0.15); /* More pronounced shadow on hover */
-        }
-        .project-card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 1rem;
+        .project-card:hover, .skill-card:hover, .testimonial-card:hover, .cert-card:hover {
+            box-shadow: 0 0 25px rgba(0,0,0,0.15);
         }
         .skill-grid {
             display: grid;
@@ -121,10 +114,11 @@
             position: relative;
         }
         .achievements-list li:before {
-            content: "🏆"; /* Trophy icon */
+            content: "⚡";
             position: absolute;
             left: 0;
             top: 0;
+            color: var(--primary);
         }
         .testimonial-card p {
             font-style: italic;
@@ -150,7 +144,7 @@
             color: #fff;
             font-size: 1.1rem;
             transition: background-color 0.3s, color 0.3s;
-            margin-left: 1rem; /* Spacing from last nav link */
+            margin-left: 1rem;
         }
         .toggle-btn:hover {
             background-color: #fff;
@@ -166,42 +160,40 @@
             border-radius: 5px;
             font-weight: 600;
             transition: background 0.3s;
-            margin-right: 10px; /* Spacing between buttons */
+            margin-right: 10px;
         }
         a.button:hover {
-            background: #005f99; /* A darker shade of blue for hover */
+            background: #005f99;
         }
         #hero {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center content horizontally */
+            align-items: center;
             text-align: center;
         }
         #hero img.profile-photo {
-            width: 150px; /* Adjust size as needed */
+            width: 150px;
             height: 150px;
-            border-radius: 50%; /* Makes it a circle */
+            border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1.5rem;
-            border: 4px solid var(--primary); /* A nice border */
+            border: 4px solid var(--primary);
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         #hero h1 {
-            font-size: 2.5rem; /* Larger for hero */
+            font-size: 2.5rem;
             margin-bottom: 0.75rem;
         }
         #hero p {
             font-size: 1.25rem;
             margin-top: 0.5rem;
-            min-height: 3rem; /* Ensures consistent height for typing effect wrapping */
+            min-height: 3rem;
             font-weight: 500;
             color: var(--text);
             max-width: 700px;
         }
-
-        /* Mobile Menu Specific CSS */
         .menu-toggle {
-            display: none; /* Hidden by default, shown only on mobile */
+            display: none;
             font-size: 2rem;
             background: none;
             border: none;
@@ -209,46 +201,41 @@
             cursor: pointer;
             padding: 0.5rem;
         }
-
         @media (max-width: 768px) {
             header {
-                flex-direction: row; /* Keep logo and toggle on one row */
-                justify-content: space-between; /* Space them out */
+                flex-direction: row;
+                justify-content: space-between;
                 align-items: center;
             }
-
             .menu-toggle {
-                display: block; /* Show hamburger on mobile */
+                display: block;
             }
-
             nav {
-                display: none; /* Hide nav by default on mobile */
+                display: none;
                 width: 100%;
                 flex-direction: column;
-                background: var(--primary); /* Keep background for the menu */
-                position: absolute; /* Position it below the header */
-                top: 100%; /* Place it right below the header */
+                background: var(--primary);
+                position: absolute;
+                top: 100%;
                 left: 0;
                 padding: 1rem 0;
                 box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-                z-index: 99; /* Below sticky header */
+                z-index: 99;
             }
-
             nav.open {
-                display: flex; /* Show nav when 'open' class is added */
+                display: flex;
             }
-
             nav a {
-                margin: 0.5rem 2rem; /* Add some horizontal padding for links */
+                margin: 0.5rem 2rem;
                 text-align: center;
-                width: auto; /* Allow links to take natural width */
+                width: auto;
             }
             .toggle-btn {
-                margin-top: 0; /* Remove top margin for theme toggle */
-                margin-left: 0; /* Adjust margin for toggle button inside nav */
-                display: block; /* Ensure the theme toggle is a block inside the vertical menu */
-                width: fit-content; /* Make button fit its content */
-                margin-inline: auto; /* Center the button */
+                margin-top: 0;
+                margin-left: 0;
+                display: block;
+                width: fit-content;
+                margin-inline: auto;
             }
         }
         @media (max-width: 600px) {
@@ -267,7 +254,7 @@
             <a href="#education">Education</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
-            <a href="#achievements">Achievements</a>
+            <a href="#achievements">Credentials</a>
             <a href="#testimonials">Testimonials</a>
             <a href="#contact">Connect</a>
             <button class="toggle-btn" aria-label="Toggle dark mode" onclick="toggleTheme()">🌓</button>
@@ -284,7 +271,7 @@
         
         <section id="about">
             <h2>Summary</h2> 
-            <p>I am a passionate, results-driven Computer Science undergraduate specializing in Data Science and Core Engineering. I excel at independently conceiving, designing, and deploying end-to-end digital architectures—ranging from complex embedded C++ hardware control loops to responsive full-stack applications and advanced data diagnostics pipelines. My focus is on writing clean, highly optimized, and user-centric code that translates raw parameters into real-world operational impact. I am an agile learner who thrives on bridging theoretical database structures with robust, scalable software deployments.</p>
+            <p>I am a passionate, results-driven Computer Science undergraduate specializing in Data Science and Core Engineering. I excel at independently conceiving, designing, and deploying end-to-end digital architectures—ranging from complex embedded C++ hardware control loops to responsive full-stack applications and advanced data diagnostics pipelines. My focus is on writing clean, highly optimized, and user-centric code that translates raw parameters into real-world operational impact. My agility as a continuous learner bridges theoretical data structures with robust, scalable software deployments.</p>
         </section>
         
         <section id="education">
@@ -315,7 +302,6 @@
             <p>I possess a versatile and robust set of technical skills, constantly honed to deliver high-quality, scalable digital solutions:</p>
             <div class="skill-grid">
                 <div class="skill-card"><h3>Core C++</h3></div>
-                <!-- Markdown bold formatting avoided for simple code syntax string representation layout -->
                 <div class="skill-card"><h3>JavaScript</h3></div>
                 <div class="skill-card"><h3>Python (Flask)</h3></div>
                 <div class="skill-card"><h3>SQL Database</h3></div>
@@ -366,10 +352,10 @@
             
             <h3>Project: Vinnyl (Currently Under Development)</h3>
             <div class="project-card">
-                <p>An advanced engineering layout designed to modernize personal media organization architectures, focusing on secure cloud synchronization, user data isolation, and smooth, private data access models.</p>
+                <p>An advanced engineering layout designed to revolutionize personal media organization architectures, focusing on secure cloud synchronization, user data isolation, and smooth, private data access models.</p>
                 <p><strong>Technologies:</strong> React, Node.js, Express, MongoDB, Cloudinary Media Framework</p>
                 <ul>
-                    <li><strong>Intuitive Drag-and-Drop Interface:</strong> Optimizing layout file management and asset organization flows.</li>
+                    <li><strong>Intuitive Drag-and-Drop Interface:</strong> Simplifying file management and asset organization flows.</li>
                     <li><strong>Secure Cloud Synchronization:</strong> Structuring data availability, route protection, and transactional database integrity across devices.</li>
                     <li><strong>Advanced Search &amp; Filtering:</strong> Enabling quick, algorithmic retrieval of relational index fields.</li>
                 </ul>
@@ -398,28 +384,52 @@
         </section>
         
         <section id="achievements">
-            <h2>Achievements &amp; Certifications: Commitment to Growth</h2>
-            <p>Beyond building software frameworks, my background is anchored in high-performance leadership, competitive athletic tournament environments, and technical credentials:</p>
+            <h2>Professional Certifications, Specializations &amp; Badges</h2>
             
-            <h3>Enterprise Simulations &amp; Technical Milestones</h3>
-            <div class="achievements-list">
-                <ul>
-                    <li>💼 <strong>Deloitte Australia Data Analytics Job Simulation:</strong> Conducted data dashboard engineering via Tableau, corporate forensic technology analytics, and dataset classifications in Excel (May 2026).</li>
-                    <li>✈️ <strong>British Airways Data Science Job Simulation:</strong> Executed review data web scraping algorithms, customer sentiment analysis, and predictive behavioral models.</li>
-                    <li>📈 <strong>Tata Data Visualisation Simulation:</strong> Developed visual analytics models to support executive decision-making and prepared strategy questions for corporate senior leadership.</li>
-                    <li>🧠 <strong>OCT60X Foundation to Future ML Track:</strong> Completed the Python, AI, and Machine Learning Professional Track via the Oriental Group of Institutes.</li>
-                    <li>🏅 <strong>Academic &amp; Project Recognition:</strong> Awarded 'Best Project' for Maatrikaa by CodeCraft Academy and WebDev Guild; consistently recognized on the Dean's List for Academic Excellence.</li>
-                    <li>🛡️ <strong>Advanced Professional Pathways:</strong> Completed CSE_OIST Learning Path alongside targeted LinkedIn certifications in Python Essentials, AI Foundations, and Azure AI structures.</li>
-                    <li>💻 <strong>Hackathon Execution:</strong> Successfully participated in the Core Ecosystems Hackathon by Geeks of Gurukul (demonstrating physical automated control hardware loops) and the Smart India Hackathon.</li>
-                </ul>
+            <div class="cert-card">
+                <h3>🏆 Industry Job Simulations (Forage)</h3>
+                <div class="achievements-list">
+                    <ul>
+                        <li><strong>Deloitte Australia — Data Analytics Simulation:</strong> Completed forensic data technology operations, engineered corporate analytics dashboards using Tableau, and built executive-level business conclusion summaries in Excel (May 2026).</li>
+                        <li><strong>British Airways — Data Science Simulation:</strong> Deployed client-side web scraping algorithms to parse customer feedback databases and engineered predictive machine learning models to analyze purchasing factors (May 2026).</li>
+                        <li><strong>Tata Consultancy Services — Data Visualisation:</strong> Designed high-level visual analytics frameworks for executive decision-making and prepared board-level meeting briefs for senior leadership portfolios (May 2026).</li>
+                    </ul>
+                </div>
             </div>
-            
-            <h3>Athletic &amp; Martial Arts Honors</h3>
-            <div class="achievements-list">
-                <ul>
-                    <li>🥋 <strong>Karate Brown Belt Excellence:</strong> Achieved a certified Brown Belt tier under rigorous physical discipline; honored with multiple Gold, Silver, and Bronze medals across regional championships.</li>
-                    <li>🏀 <strong>National Level Basketball Representation:</strong> Selected to represent school divisions, Team Bhopal, and Team Madhya Pradesh; achieved tournament representation at the National Level as a one-time national basketball player.</li>
-                </ul>
+
+            <div class="cert-card">
+                <h3>🏅 Professional Micro-Credentials &amp; Verification Badges</h3>
+                <div class="achievements-list">
+                    <ul>
+                        <li><strong>Microsoft Azure AI Essentials Certificate:</strong> Validated proficiency across foundational cloud-based intelligence deployment architectures (Microsoft &amp; LinkedIn).</li>
+                        <li><strong>Career Essentials in GitHub Professional Badge:</strong> Verified end-to-end repository infrastructure workflows, branch tracking models, and Git version controls (GitHub &amp; LinkedIn).</li>
+                        <li><strong>Essential Skills in Generative AI for Creatives:</strong> Affiliated certification validating generative AI tooling pipelines and visual asset creation workflows (Adobe &amp; LinkedIn).</li>
+                        <li><strong>Anaconda Machine Learning with Python Specialization:</strong> Verified track exploring technical Python processing frameworks and foundational ML application pipelines.</li>
+                        <li><strong>Responsible AI Foundations:</strong> Corporate professional certification tracker covering algorithmic asset protection and AI governance strategies (All Tech Is Human &amp; LinkedIn).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <h3>🚀 Academic Milestones &amp; Hackathons</h3>
+                <div class="achievements-list">
+                    <ul>
+                        <li><strong>OCT60X Foundation to Future Track:</strong> Completed the rigorous Python, AI, and Machine Learning Professional Track at the Oriental Group of Institutes.</li>
+                        <li><strong>Dean's List for Academic Excellence:</strong> Achieved consecutive academic honors recognizing top-tier performance rankings across specialized curriculums.</li>
+                        <li><strong>Best Project Award:</strong> Received institutional recognition and an Achievement Certificate for the architecture and cloud deployment of the *Maatrikaa* platform.</li>
+                        <li><strong>Smart India Hackathon &amp; Core Ecosystems:</strong> Successfully competed by engineering automated control loops and system-level prototypes evaluated by industry technical panels.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <h3>🏀 Athletic &amp; Martial Arts Honors</h3>
+                <div class="achievements-list">
+                    <ul>
+                        <li><strong>Karate Brown Belt Excellence:</strong> Achieved a certified advanced Brown Belt tier under rigorous physical discipline; honored with multiple Gold, Silver, and Bronze medals across regional championships.</li>
+                        <li><strong>National Level Basketball Representation:</strong> Selected to represent school divisions, Team Bhopal, and Team Madhya Pradesh; achieved tournament representation at the National Level as a high-performance tournament player.</li>
+                    </ul>
+                </div>
             </div>
         </section>
         
@@ -446,7 +456,7 @@
         
         <section id="contact">
             <h2>Ready to Create Something Amazing Together?</h2>
-            <p>I am eager to explore technical internship opportunities, software engineering roles, and analytical research collaborations. Let's trace how my technical architecture toolkit can support your system infrastructure objectives.</p>
+            <p>I am eager to explore technical internship opportunities, software engineering roles, and analytical research collaborations. Let's connect and discuss how my technical architecture toolkit can support your system infrastructure objectives.</p>
             <p class="mb-2" style="margin-bottom: 0.5rem;">Reach out directly:</p>
             <p class="mb-2" style="margin-bottom: 0.5rem;">Email: <strong><span id="email"></span></strong></p>
             <p class="mb-2" style="margin-bottom: 0.5rem;">Connect on GitHub: <a href="https://github.com/Dev11verma" target="_blank" rel="noopener">@Dev11verma</a></p>
@@ -461,7 +471,6 @@
         <p>Crafted with passion by Dev Verma</p>
     </footer>
     <script>
-        // Dark mode toggle with saved preference
         const toggleBtn = document.querySelector('.toggle-btn');
         function toggleTheme() {
             const current = document.documentElement.getAttribute('data-theme');
@@ -469,17 +478,14 @@
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
         }
-        // Load saved theme on page load
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
 
-        // Protect email by assembling it in JavaScript
         const emailSpan = document.getElementById("email");
         const user = "abhayvermasoni604";
         const domain = "gmail.com";
         emailSpan.textContent = user + "@" + domain;
 
-        // Mobile menu toggle JavaScript
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
 
@@ -487,16 +493,13 @@
             nav.classList.toggle('open');
         });
 
-        // Smooth scroll nav highlight (scroll spy)
         const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav a'); // Re-select all nav links
+        const navLinks = document.querySelectorAll('nav a');
 
         window.addEventListener('scroll', () => {
             let currentSection = '';
             sections.forEach(section => {
-                // Offset by 60px to account for the sticky header
                 const sectionTop = section.offsetTop - 60;
-                // Check if the top of the section is visible in the viewport
                 if (window.pageYOffset >= sectionTop) {
                     currentSection = section.getAttribute('id');
                 }
@@ -509,7 +512,6 @@
             });
         });
 
-        // Close mobile menu when a navigation link is clicked
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (nav.classList.contains('open')) {
@@ -518,9 +520,7 @@
             });
         });
 
-        // Close menu when clicking outside of it (optional but good UX)
         document.addEventListener('click', (event) => {
-            // Check if the click was not inside the nav and not on the menu toggle
             if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
                 if (nav.classList.contains('open')) {
                     nav.classList.remove('open');
@@ -528,20 +528,18 @@
             }
         });
 
-        // Fade in sections on scroll for a dynamic effect
         function revealOnScroll() {
             sections.forEach(section => {
                 const sectionTop = section.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
-                if (sectionTop < windowHeight - 100) { /* Adjust '100' for when the animation triggers */
+                if (sectionTop < windowHeight - 100) {
                     section.classList.add('visible');
                 }
             });
         }
         window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll); // Also run on load for initial visibility
+        window.addEventListener('load', revealOnScroll);
 
-        // Typing effect for hero intro
         const typingText = "As a Software Engineer & Data Scientist, I architect data-driven platforms and seamless hardware-software integrations. Let's build your next success story!";
         const typingElement = document.getElementById('typing');
         let charIndex = 0;
